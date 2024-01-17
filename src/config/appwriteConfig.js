@@ -1,16 +1,17 @@
 import {Client, Databases, Account} from 'appwrite';
+import keys from './keys.js'
 
 const client = new Client();
 
 client
-    .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('65a7f8de19329edd5cfa');
+    .setEndpoint(keys.appwriteurl)
+    .setProject(keys.appwriteProjectId);
 
 export const databases = new Databases(client)
 export const account = new Account(client)
 
-export const PROJECT_ID = '65a7f8de19329edd5cfa'
-export const COLLECTION_ID = '65a7f9bee9c3732cd850'
-export const DATABASE_ID = '65a7f9b27721534c273a'
+export const PROJECT_ID = keys.appwriteProjectId
+export const COLLECTION_ID = keys.appwriteCollectionId
+export const DATABASE_ID = keys.appwriteDatabaseId
 
 export default client;
